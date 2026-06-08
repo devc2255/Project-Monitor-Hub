@@ -2,9 +2,7 @@ name: Global Keep Alive
 
 on:
   schedule:
-    # Runs at the 0th and 10th minute of every hour (every 10 minutes)
     - cron: '*/10 * * * *'
-  # Allows you to manually trigger it for testing via GitHub Actions tab
   workflow_dispatch:
 
 jobs:
@@ -12,26 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping All Services
-        continue-on-error: true
         run: |
-          # -L follows redirects (essential for Streamlit)
-          # -A "Mozilla/5.0" pretends to be a real browser (essential to avoid bot blocking)
-          # -I performs a header-only request (efficient for uptime checks)
-
           echo "Pinging Intel Flow Tech..."
-          curl -L -A "Mozilla/5.0" -I https://intel-flow-tech.onrender.com/
+          curl -L -A "Mozilla/5.0" -I https://intel-flow-tech.onrender.com/ || true
           
           echo "Pinging Investment Decision Support..."
-          curl -L -A "Mozilla/5.0" -I https://huggingface.co/spaces/5axe32/Investment-Decision-Support-System
+          curl -L -A "Mozilla/5.0" -I https://huggingface.co/spaces/5axe32/Investment-Decision-Support-System || true
           
           echo "Pinging Intrinsic Valuation Engine..."
-          curl -L -A "Mozilla/5.0" -I https://institutional-intrinsic-valuation-engine.onrender.com/
+          curl -L -A "Mozilla/5.0" -I https://institutional-intrinsic-valuation-engine.onrender.com/ || true
           
           echo "Pinging Core Inventory System..."
-          curl -L -A "Mozilla/5.0" -I https://core-inventory-system-rpi1.onrender.com/
+          curl -L -A "Mozilla/5.0" -I https://core-inventory-system-rpi1.onrender.com/ || true
           
           echo "Pinging Cyberbullying Detector..."
-          curl -L -A "Mozilla/5.0" -I https://cyber-bullying-tweet-detector-x6c4aydnnblz36aejhf24f.streamlit.app/
+          curl -L -A "Mozilla/5.0" -I https://cyber-bullying-tweet-detector-x6c4aydnnblz36aejhf24f.streamlit.app/ || true
           
           echo "Pinging Data Science Project..."
-          curl -L -A "Mozilla/5.0" -I https://datascienceproject-orfwavf7cve3sqea66fcmc.streamlit.app/
+          curl -L -A "Mozilla/5.0" -I https://datascienceproject-orfwavf7cve3sqea66fcmc.streamlit.app/ || true
