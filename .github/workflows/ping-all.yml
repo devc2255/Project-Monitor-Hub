@@ -2,7 +2,9 @@ name: Global Keep Alive
 
 on:
   schedule:
-    - cron: '*/10 * * * *' # Pings every 10 minutes
+    # Runs at the 0th and 10th minute of every hour (every 10 minutes)
+    - cron: '*/10 * * * *'
+  # Allows you to manually trigger it for testing via GitHub Actions tab
   workflow_dispatch:
 
 jobs:
@@ -10,16 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping All Services
+        continue-on-error: true
         run: |
-          echo "Pinging Project 1..."
+          echo "Pinging Project 1: Intel Flow Tech..."
           curl -I https://intel-flow-tech.onrender.com/
-          echo "Pinging Project 2..."
+          
+          echo "Pinging Project 2: Investment Decision Support..."
           curl -I https://huggingface.co/spaces/5axe32/Investment-Decision-Support-System
-          echo "Pinging Project 3..."
+          
+          echo "Pinging Project 3: Intrinsic Valuation Engine..."
           curl -I https://institutional-intrinsic-valuation-engine.onrender.com/
-          echo "Pinging Project 4..."
+          
+          echo "Pinging Project 4: Core Inventory System..."
           curl -I https://core-inventory-system-rpi1.onrender.com/
-          echo "Pinging Project 5..."
+          
+          echo "Pinging Project 5: Cyberbullying Tweet Detector..."
           curl -I https://cyber-bullying-tweet-detector-x6c4aydnnblz36aejhf24f.streamlit.app/
-          echo "Pinging Project 6..."
+          
+          echo "Pinging Project 6: Data Science Portfolio..."
           curl -I https://datascienceproject-orfwavf7cve3sqea66fcmc.streamlit.app/
