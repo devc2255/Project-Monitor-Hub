@@ -1,0 +1,25 @@
+name: Global Keep Alive
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' # Pings every 10 minutes
+  workflow_dispatch:
+
+jobs:
+  ping-services:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping All Services
+        run: |
+          echo "Pinging Project 1..."
+          curl -I https://intel-flow-tech.onrender.com/
+          echo "Pinging Project 2..."
+          curl -I https://huggingface.co/spaces/5axe32/Investment-Decision-Support-System
+          echo "Pinging Project 3..."
+          curl -I https://institutional-intrinsic-valuation-engine.onrender.com/
+          echo "Pinging Project 4..."
+          curl -I https://core-inventory-system-rpi1.onrender.com/
+          echo "Pinging Project 5..."
+          curl -I https://cyber-bullying-tweet-detector-x6c4aydnnblz36aejhf24f.streamlit.app/
+          echo "Pinging Project 6..."
+          curl -I https://datascienceproject-orfwavf7cve3sqea66fcmc.streamlit.app/
