@@ -14,20 +14,24 @@ jobs:
       - name: Ping All Services
         continue-on-error: true
         run: |
-          echo "Pinging Project 1: Intel Flow Tech..."
-          curl -I https://intel-flow-tech.onrender.com/
+          # -L follows redirects (essential for Streamlit)
+          # -A "Mozilla/5.0" pretends to be a real browser (essential to avoid bot blocking)
+          # -I performs a header-only request (efficient for uptime checks)
+
+          echo "Pinging Intel Flow Tech..."
+          curl -L -A "Mozilla/5.0" -I https://intel-flow-tech.onrender.com/
           
-          echo "Pinging Project 2: Investment Decision Support..."
-          curl -I https://huggingface.co/spaces/5axe32/Investment-Decision-Support-System
+          echo "Pinging Investment Decision Support..."
+          curl -L -A "Mozilla/5.0" -I https://huggingface.co/spaces/5axe32/Investment-Decision-Support-System
           
-          echo "Pinging Project 3: Intrinsic Valuation Engine..."
-          curl -I https://institutional-intrinsic-valuation-engine.onrender.com/
+          echo "Pinging Intrinsic Valuation Engine..."
+          curl -L -A "Mozilla/5.0" -I https://institutional-intrinsic-valuation-engine.onrender.com/
           
-          echo "Pinging Project 4: Core Inventory System..."
-          curl -I https://core-inventory-system-rpi1.onrender.com/
+          echo "Pinging Core Inventory System..."
+          curl -L -A "Mozilla/5.0" -I https://core-inventory-system-rpi1.onrender.com/
           
-          echo "Pinging Project 5: Cyberbullying Tweet Detector..."
-          curl -I https://cyber-bullying-tweet-detector-x6c4aydnnblz36aejhf24f.streamlit.app/
+          echo "Pinging Cyberbullying Detector..."
+          curl -L -A "Mozilla/5.0" -I https://cyber-bullying-tweet-detector-x6c4aydnnblz36aejhf24f.streamlit.app/
           
-          echo "Pinging Project 6: Data Science Portfolio..."
-          curl -I https://datascienceproject-orfwavf7cve3sqea66fcmc.streamlit.app/
+          echo "Pinging Data Science Project..."
+          curl -L -A "Mozilla/5.0" -I https://datascienceproject-orfwavf7cve3sqea66fcmc.streamlit.app/
