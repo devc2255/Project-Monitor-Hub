@@ -24,7 +24,7 @@ jobs:
           curl -L -A "Mozilla/5.0" -I https://core-inventory-system-rpi1.onrender.com/ || true
           
           echo "Pinging Cyberbullying Detector..."
-          curl -L -A "Mozilla/5.0" -I https://cyber-bullying-tweet-detector-x6c4aydnnblz36aejhf24f.streamlit.app/ || true
+          curl -L -A "Mozilla/5.0" -I https://cyber-bullying-tweet-detector.onrender.com/ || true
           
           echo "Pinging Data Science Project..."
-          curl -L -A "Mozilla/5.0" -I https://datascienceproject-orfwavf7cve3sqea66fcmc.streamlit.app/ || true
+          curl -L -A "Mozilla/5.0" -I https://datascienceproject-v791.onrender.com/ || true
