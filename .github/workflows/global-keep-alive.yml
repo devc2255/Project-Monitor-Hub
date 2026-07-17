@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Ping All Services
         run: |
+          
+          echo "Pinging Market Microstructure & Systematic Risk Simulator Project..."
+          curl -L -A "Mozilla/5.0" -I https://market-microstructure-systematic-risk-52t2.onrender.com/ || true
+
           echo "Pinging Intel Flow Tech..."
           curl -L -A "Mozilla/5.0" -I https://intel-flow-tech.onrender.com/ || true
           
@@ -18,7 +22,7 @@ jobs:
           curl -L -A "Mozilla/5.0" -I https://huggingface.co/spaces/5axe32/Investment-Decision-Support-System || true
           
           echo "Pinging Intrinsic Valuation Engine..."
-          curl -L -A "Mozilla/5.0" -I https://institutional-intrinsic-valuation-engine.onrender.com/ || true
+          curl -L -A "Mozilla/5.0" -I https://institutional-intrinsic-valuation-engine-0q2h.onrender.com/ || true
           
           echo "Pinging Core Inventory System..."
           curl -L -A "Mozilla/5.0" -I https://core-inventory-system-rpi1.onrender.com/ || true
@@ -28,3 +32,5 @@ jobs:
           
           echo "Pinging Data Science Project..."
           curl -L -A "Mozilla/5.0" -I https://datascienceproject-v791.onrender.com/ || true
+       
+          
