@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping All Services
-        run: |
+        run:
           
           echo "Pinging Market Microstructure & Systematic Risk Simulator Project..."
           curl -L -A "Mozilla/5.0" -I https://market-microstructure-systematic-risk-52t2.onrender.com/ || true
